@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Studio Philosophy | Drawing Artist R</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* ─── هندسة الخط الزمني القوسي الفريد ─── */
+        .timeline-curve-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 100px auto;
+            padding: 40px 20px;
+        }
+
+        /* العمود الفقري المقوس الممتد لأسفل */
+        .timeline-main-curve {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gallery-accent) 0%, var(--gallery-purple) 70%, transparent 100%);
+            border-radius: 4px;
+        }
+
+        /* الفروع المنبثقة من المنحنى الرئيسي */
+        .timeline-branch-node {
+            position: relative;
+            width: 50%;
+            margin-bottom: 60px;
+            box-sizing: border-box;
+        }
+
+        /* الفروع الفردية (على اليسار) */
+        .timeline-branch-node.left-branch {
+            left: 0;
+            padding-right: 50px;
+            text-align: right;
+        }
+
+        /* الفروع الزوجية (على اليمين) */
+        .timeline-branch-node.right-branch {
+            left: 50%;
+            padding-left: 50px;
+            text-align: left;
+        }
+
+        /* النقطة المركزية الفاخرة للربط بين المنحنى والفرع */
+        .timeline-branch-node::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 14px;
+            height: 14px;
+            background: var(--gallery-dark);
+            border: 3px solid var(--gallery-accent);
+            border-radius: 50%;
+            z-index: 5;
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-branch-node.left-branch::after { right: -10px; }
+        .timeline-branch-node.right-branch::after { left: -7px; }
+
+        .timeline-branch-node:hover::after {
+            background: var(--gallery-accent);
+            box-shadow: 0 0 12px var(--gallery-accent);
+            transform: scale(1.3);
+        }
+
+        /* السنوات البارزة الفخمة */
+        .branch-year-badge {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gallery-accent);
+            margin-bottom: 5px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        /* كروت فروع تفاصيل السنين */
+        .branch-card-content {
+            display: inline-block;
+            max-width: 380px;
+            padding: 25px;
+            transition: var(--transition-smooth);
+        }
+
+        /* هوفر احترافي عند الإشارة للفروع */
+        .branch-card-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--gallery-purple);
+        }
+
+        /* للتوافق مع شاشات الموبايل حتى لا يتداخل القوس */
+        @media (max-width: 768px) {
+            .timeline-main-curve { left: 20px; transform: none; }
+            .timeline-branch-node { width: 100%; left: 0 !important; padding-left: 45px !important; padding-right: 0 !important; text-align: left !important; }
+            .timeline-branch-node::after { left: 12px !important; right: auto !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="gallery-header">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand-logo">DRAWING ARTIST <span>R</span></a>
+            <nav class="main-navigation-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="artwork.html" class="nav-link-item">Artwork</a>
+                <a href="about.html" class="nav-link-item active">About Studio</a>
+                <a href="commission.html" class="nav-link-item">Commissions</a>
+                <a href="contact.html" class="nav-link-item">Contact</a>
+            </nav>
+                <div class="nav-right-actions">
+
+    <button class="theme-toggle-btn" id="theme-toggle">
+        🌓
+    </button>
+
+    <button class="mobile-menu-toggle" id="menu-toggle">
+        ☰
+    </button>
+
+</div>
+    </header>
+<div id="mobile-menu" class="nav-menu-mobile">
+
+    <a href="index.html" class="nav-link-item">Home</a>
+
+    <a href="artwork.html" class="nav-link-item">Artwork</a>
+
+    <a href="about.html" class="nav-link-item">About Studio</a>
+
+    <a href="commission.html" class="nav-link-item">Commissions</a>
+
+    <a href="contact.html" class="nav-link-item">Contact</a>
+
+</div>
+
+    <div class="nav-menu-mobile" id="mobile-menu">
+        <a href="index.html" class="nav-link-item">Home</a>
+        <a href="artwork.html" class="nav-link-item">gallery</a>
+        <a href="about.html" class="nav-link-item active">About Studio</a>
+        <a href="commission.html" class="nav-link-item">Commissions</a>
+        <a href="contact.html" class="nav-link-item">Contact</a>
+    </div>
+
+
+
+<div class="page-wrapper">
+
+    <section class="gallery-hero fade-up">
+
+        <h1 class="hero-title">
+            About Raghd Art
+        </h1>
+
+        <p class="hero-subtitle">
+            Every artwork begins with an emotion, a memory, or a story waiting to be brought to life.
+        </p>
+
+    </section>
+
+    <main class="gallery-section fade-up">
+
+        <div class="about-layout">
+
+            <div class="glass-panel about-image-card">
+
+                <img src="imgs/mee.jpg"
+                     alt="Raghd Art">
+
+            </div>
+
+            <div class="about-content">
+
+                <span class="art-badge">
+
+                    About The Artist
+
+                </span>
+
+                <h2>
+
+                    Creating meaningful artwork through passion, imagination and attention to detail.
+
+                </h2>
+
+                <p>
+
+                    My name is <strong>Raghd</strong>, the artist behind <strong>Raghd Art</strong>.
+                    Drawing has always been more than a hobby—it is my way of expressing emotions, preserving memories, and telling stories through every brushstroke.
+
+                </p>
+
+                <p>
+
+                    I specialize in custom portraits, realistic drawings, oil paintings and digital artwork. Every commission is carefully created to reflect each client's vision while maintaining high artistic quality and attention to detail.
+
+                </p>
+
+                <p>
+
+                    My goal is to create timeless artwork that becomes a meaningful part of people's lives and homes.
+
+                </p>
+
+                <a href="index.html"
+                   class="btn-premium btn-premium-primary">
+
+                    Explore Gallery
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <section class="gallery-section fade-up">
+
+    <div style="text-align:center;margin-bottom:55px;">
+
+        <span class="art-badge">
+
+            MY VALUES
+
+        </span>
+
+        <h2 class="hero-title" style="font-size:2.4rem;">
+
+            What Defines My Art
+
+        </h2>
+
+    </div>
+
+    <div class="process-grid">
+
+        <div class="glass-panel process-card hover-lift">
+
+            <i class="fas fa-palette contact-icon"></i>
+
+            <h3>Original Artwork</h3>
+
+            <p>
+
+                Every piece is created from scratch with care and creativity.
+
+            </p>
+
+        </div>
+
+        <div class="glass-panel process-card hover-lift">
+
+            <i class="fas fa-heart contact-icon"></i>
+
+            <h3>Made With Passion</h3>
+
+            <p>
+
+                Every painting reflects emotion, patience and dedication.
+
+            </p>
+
+        </div>
+
+        <div class="glass-panel process-card hover-lift">
+
+            <i class="fas fa-gem contact-icon"></i>
+
+            <h3>Premium Quality</h3>
+
+            <p>
+
+                High-quality materials and professional finishing in every artwork.
+
+            </p>
+
+        </div>
+
+        <div class="glass-panel process-card hover-lift">
+
+            <i class="fas fa-users contact-icon"></i>
+
+            <h3>Custom Experience</h3>
+
+            <p>
+
+                Every commission is tailored to match your unique vision.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+      MY ARTISTIC JOURNEY
+========================= -->
+
+<h2 style="font-family:'Playfair Display', serif; text-align:center; font-size:2rem; color:var(--gallery-text); margin-bottom:20px;">
+    My Artistic Journey
+</h2>
+
+<p class="hero-subtitle" style="text-align:center; max-width:700px; margin:0 auto 70px;">
+    Every artist has a beginning. Mine started with simple sketches and grew into a passion for creating meaningful artwork that tells stories and captures emotions.
+</p>
+
+<div class="timeline-curve-wrapper">
+
+    <!-- Main Curve -->
+    <div class="timeline-main-curve"></div>
+
+    <!-- 2015 -->
+    <div class="timeline-branch-node left-branch">
+
+        <div class="glass-panel branch-card-content">
+
+            <span class="branch-year-badge">2015</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                First Sketches
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                My artistic journey began with simple pencil drawings,
+                exploring shapes, faces and everyday objects while
+                discovering my passion for art.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- 2017 -->
+    <div class="timeline-branch-node right-branch">
+
+        <div class="glass-panel branch-card-content">
+
+            <span class="branch-year-badge">2017</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                Building Strong Foundations
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                Learning perspective, proportions and realistic shading
+                became the foundation of my artistic growth.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- 2019 -->
+    <div class="timeline-branch-node left-branch">
+
+        <div class="glass-panel branch-card-content">
+
+            <span class="branch-year-badge">2019</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                Discovering My Style
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                I experimented with portraits, realism and different
+                artistic techniques to develop my own visual identity.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- 2021 -->
+    <div class="timeline-branch-node right-branch">
+
+        <div class="glass-panel branch-card-content">
+
+            <span class="branch-year-badge">2021</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                Sharing My Artwork
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                I began sharing my work online, receiving valuable
+                feedback that inspired continuous improvement.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- 2023 -->
+    <div class="timeline-branch-node left-branch">
+
+        <div class="glass-panel branch-card-content">
+
+            <span class="branch-year-badge">2023</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                Professional Development
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                My focus shifted toward creating high-quality custom
+                commissions while refining both traditional and digital
+                art techniques.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- 2025 -->
+    <div class="timeline-branch-node right-branch">
+
+        <div class="glass-panel branch-card-content">
+
+            <span class="branch-year-badge">2025</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                Launching Raghd Art
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                I created my personal brand, Raghd Art, offering
+                personalized commissions and building my online portfolio.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- 2026 -->
+    <div class="timeline-branch-node left-branch">
+        <div class="glass-panel branch-card-content">
+            <span class="branch-year-badge">2026</span>
+
+            <h3 style="margin:0 0 10px;color:var(--gallery-text);">
+                Growing Beyond Limits
+            </h3>
+
+            <p style="margin:0;color:var(--gallery-subtext);line-height:1.7;">
+                Today, Raghd Art continues to grow with the vision of
+                creating meaningful artwork for clients worldwide while
+                constantly learning, improving and exploring new creative
+                possibilities.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<footer class="gallery-footer">
+    <div class="footer-container" style="display: flex; justify-content: space-between; align-items: center; padding: 30px var(--site-padding, 40px); border-top: 1px solid var(--glass-border);">
+        <span class="footer-copyright" style="font-size: 13px; color: var(--gallery-subtext); letter-spacing: 0.5px;">
+            &copy; 2026 Drawing Artist R. All Rights Reserved.
+        </span>
+        
+        <!-- أيقونات السوشيال ميديا الاحترافية والمينيمال -->
+        <div class="footer-social-networks" style="display: flex; gap: 22px;">
+            <a href="https://www.instagram.com/drowing_artist_r?igsh=MTlwZjltbG41dG9mNQ==" target="_blank" class="social-icon-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a  href="http://www.tiktok.com/@raghdart25" target="_blank" class="social-icon-link" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            
+             <a href="https://pin.it/4g1s0yDaM" target="_blank" class="social-icon-link" aria-label="Pinterest">
+                   <i class="fab fa-pinterest-p"></i>
+                </a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* تنسيق الحركة المينيمال الفاخرة للأيقونات الجديدة */
+    .footer-social-networks .social-icon-link {
+        color: var(--gallery-subtext, #8e8294); /* لون موف عاجي هادئ افتراضياً */
+        font-size: 1.15rem;
+        text-decoration: none;
+        transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+    }
+
+    /* تأثير الـ Hover الذهبي المتوهج */
+    .footer-social-networks .social-icon-link:hover {
+        color: var(--gallery-accent, #c5a880); /* يتحول للذهبي الدافئ */
+        transform: translateY(-3px); /* ارتفاع انسيابي ناعم */
+        filter: drop-shadow(0 0 6px var(--gallery-accent, #c5a880)); /* توهج خفيف راقي */
+    }
+</style>
+    </div>
+<script src="js/main.js"></script>
+</body>
+</html>

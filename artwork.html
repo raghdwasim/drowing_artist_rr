@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Masterpiece Study | Drawing Artist R
+    </title>
+
+    <link rel="stylesheet"
+          href="css/components.css">
+
+    <link rel="stylesheet"
+          href="css/animations.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="gallery-header">
+
+    <div class="navbar-container">
+
+
+        <a href="index.html"
+           class="navbar-brand-logo">
+
+            DRAWING ARTIST <span>R</span>
+
+        </a>
+
+
+
+        <nav class="main-navigation-links">
+
+
+            <a href="index.html"
+               class="nav-link-item">
+
+                Home
+
+            </a>
+
+
+            <a href="artwork.html"
+               class="nav-link-item active">
+
+                Artwork
+
+            </a>
+
+
+            <a href="about.html"
+               class="nav-link-item">
+
+                About Studio
+
+            </a>
+
+
+            <a href="commission.html"
+               class="nav-link-item">
+
+                Commissions
+
+            </a>
+
+
+            <a href="contact.html"
+               class="nav-link-item">
+
+                Contact
+
+            </a>
+
+
+        </nav>
+
+
+
+        <div class="nav-right-actions">
+
+
+            <button
+                class="theme-toggle-btn"
+                id="theme-toggle">
+
+                🌓
+
+            </button>
+
+
+
+            <button
+                class="mobile-menu-toggle"
+                id="menu-toggle">
+
+                ☰
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div id="mobile-menu"
+     class="nav-menu-mobile">
+
+
+    <a href="index.html"
+       class="nav-link-item">
+
+        Home
+
+    </a>
+
+
+    <a href="artwork.html"
+       class="nav-link-item active">
+
+        Artwork
+
+    </a>
+
+
+    <a href="about.html"
+       class="nav-link-item">
+
+        About Studio
+
+    </a>
+
+
+    <a href="commission.html"
+       class="nav-link-item">
+
+        Commissions
+
+    </a>
+
+
+    <a href="contact.html"
+       class="nav-link-item">
+
+        Contact
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<div class="page-wrapper">
+
+
+    <!-- =================================================
+         ARTWORK DETAIL
+    ================================================= -->
+
+    <div
+        class="artwork-detail-container fade-up"
+        style="
+            max-width:1300px;
+            margin:0 auto;
+            padding:60px 40px;
+            display:grid;
+            grid-template-columns:1.1fr 1fr;
+            gap:70px;
+            align-items:start;
+        "
+    >
+
+
+
+        <!-- =============================================
+             IMAGE
+        ============================================== -->
+
+        <div
+            class="glass-panel artwork-image-panel"
+            style="
+                padding:15px;
+                position:sticky;
+                top:140px;
+            "
+        >
+
+
+            <img
+                id="dynamic-art-img"
+                src=""
+                alt="Artwork"
+                style="
+                    width:100%;
+                    display:block;
+                    border-radius:8px;
+                    box-shadow:
+                        0 30px 60px
+                        rgba(0,0,0,0.5);
+                "
+            >
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             INFORMATION
+        ============================================== -->
+
+        <div
+            class="artwork-information"
+            style="
+                display:flex;
+                flex-direction:column;
+                gap:30px;
+            "
+        >
+
+
+
+            <!-- =========================================
+                 CATEGORY + TITLE
+            ========================================== -->
+
+            <div>
+
+
+                <span
+                    class="art-badge"
+                    id="dynamic-art-badge"
+                >
+
+                    Artwork
+
+                </span>
+
+
+
+                <h1
+                    class="hero-title"
+                    id="dynamic-art-title"
+                    style="
+                        text-align:left;
+                        margin-top:15px;
+                        color:var(--gallery-accent);
+                    "
+                >
+
+                    Loading...
+
+                </h1>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DESCRIPTION
+            ========================================== -->
+
+            <p
+                id="dynamic-art-desc"
+                style="
+                    line-height:1.9;
+                    color:var(--gallery-subtext);
+                    margin:0;
+                "
+            >
+
+                Loading artwork description...
+
+            </p>
+
+
+
+            <!-- =========================================
+                 ARTWORK DATA
+            ========================================== -->
+
+            <div
+                class="glass-panel"
+                style="
+                    padding:10px 25px;
+                "
+            >
+
+
+                <table
+                    style="
+                        width:100%;
+                        border-collapse:collapse;
+                    "
+                >
+
+
+
+                    <!-- MEDIUM -->
+
+                    <tr
+                        style="
+                            border-bottom:
+                            1px solid
+                            var(--glass-border);
+                        "
+                    >
+
+                        <td
+                            style="
+                                padding:18px 0;
+                                color:
+                                var(--gallery-subtext);
+                            "
+                        >
+
+                            Medium
+
+                        </td>
+
+
+                        <td
+                            id="dynamic-art-medium"
+                            style="
+                                padding:18px 0;
+                                text-align:right;
+                                font-weight:600;
+                            "
+                        >
+
+                            -
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- SIZE -->
+
+                    <tr
+                        style="
+                            border-bottom:
+                            1px solid
+                            var(--glass-border);
+                        "
+                    >
+
+                        <td
+                            style="
+                                padding:18px 0;
+                                color:
+                                var(--gallery-subtext);
+                            "
+                        >
+
+                            Size
+
+                        </td>
+
+
+                        <td
+                            id="dynamic-art-size"
+                            style="
+                                padding:18px 0;
+                                text-align:right;
+                                font-weight:600;
+                            "
+                        >
+
+                            -
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- PRICE -->
+
+                    <tr>
+
+                        <td
+                            style="
+                                padding:22px 0;
+                                color:
+                                var(--gallery-subtext);
+                                font-size:15px;
+                            "
+                        >
+
+                            Price
+
+                        </td>
+
+
+                        <td
+                            id="dynamic-art-price"
+                            style="
+                                padding:22px 0;
+                                text-align:right;
+                                color:
+                                var(--gallery-accent);
+                                font-size:27px;
+                                font-weight:700;
+                            "
+                        >
+
+                            -
+
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 REQUEST BUTTON
+            ========================================== -->
+
+            <a
+                id="request-artwork-btn"
+                href="commission.html"
+                class="btn-premium btn-premium-primary"
+                style="
+                    width:100%;
+                    text-align:center;
+                    margin-top:5px;
+                "
+            >
+
+                <i class="fas fa-palette"></i>
+
+                Request This Artwork
+
+            </a>
+
+
+
+            <!-- =========================================
+                 BACK BUTTON
+            ========================================== -->
+
+            <a
+                href="index.html"
+                class="btn-premium"
+                style="
+                    width:100%;
+                    text-align:center;
+                "
+            >
+
+                <i class="fas fa-arrow-left"></i>
+
+                Back to Gallery
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer class="gallery-footer">
+
+
+        <div
+            class="footer-container"
+            style="
+                display:flex;
+                justify-content:
+                space-between;
+                align-items:center;
+                padding:
+                30px
+                var(--site-padding,40px);
+                border-top:
+                1px solid
+                var(--glass-border);
+            "
+        >
+
+
+            <span
+                class="footer-copyright"
+                style="
+                    font-size:13px;
+                    color:
+                    var(--gallery-subtext);
+                    letter-spacing:
+                    0.5px;
+                "
+            >
+
+                &copy; 2026 Drawing Artist R.
+                All Rights Reserved.
+
+            </span>
+
+
+
+            <div
+                class="footer-social-networks"
+                style="
+                    display:flex;
+                    gap:22px;
+                "
+            >
+
+
+                <a
+                    href="https://www.instagram.com/drowing_artist_r?igsh=MTlwZjltbG41dG9mNQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon-link"
+                    aria-label="Instagram"
+                >
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+
+                <a
+                    href="http://www.tiktok.com/@raghdart25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon-link"
+                    aria-label="TikTok"
+                >
+
+                    <i class="fab fa-tiktok"></i>
+
+                </a>
+
+
+
+                <a
+                    href="https://pin.it/4g1s0yDaM"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon-link"
+                    aria-label="Pinterest"
+                >
+
+                    <i class="fab fa-pinterest-p"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE-SPECIFIC STYLE
+===================================================== -->
+
+<style>
+
+
+    .footer-social-networks
+    .social-icon-link {
+
+        color:
+            var(--gallery-subtext, #8e8294);
+
+        font-size:
+            1.15rem;
+
+        text-decoration:
+            none;
+
+        transition:
+            transform 0.3s ease,
+            color 0.3s ease,
+            filter 0.3s ease;
+
+    }
+
+
+
+    .footer-social-networks
+    .social-icon-link:hover {
+
+        color:
+            var(--gallery-accent, #c5a880);
+
+        transform:
+            translateY(-3px);
+
+        filter:
+            drop-shadow(
+                0 0 6px
+                var(--gallery-accent, #c5a880)
+            );
+
+    }
+
+
+
+    @media (max-width:800px) {
+
+
+        .artwork-detail-container {
+
+            grid-template-columns:
+                1fr !important;
+
+            padding:
+                30px 20px !important;
+
+            gap:
+                35px !important;
+
+        }
+
+
+
+        .artwork-image-panel {
+
+            position:
+                relative !important;
+
+            top:
+                auto !important;
+
+        }
+
+
+
+        .artwork-information {
+
+            gap:
+                22px !important;
+
+        }
+
+
+
+        #dynamic-art-title {
+
+            font-size:
+                2.1rem !important;
+
+        }
+
+
+
+        .footer-container {
+
+            flex-direction:
+                column !important;
+
+            gap:
+                20px;
+
+            text-align:
+                center;
+
+        }
+
+    }
+
+
+</style>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/main.js"></script>
+
+
+</body>
+
+</html>
